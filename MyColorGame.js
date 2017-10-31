@@ -32,17 +32,26 @@ init();
 
 function init(){
 	numColors = 6;
+	initializeColorArray();
 	generateColorArray(numColors);
 	pickAnyRandomColor();
 	setupSquares();
+	//debugger();
 	setupButtons();
+
+	console.log("init(): numColors = " + numColors);
 	
 }
 
 function setupSquares(){
 	for (var i = 0; i < squares.length; i++){
+		//debugger;
+		if (colors[i] != 0){
+			squares[i].style.backgroundColor = colors[i];
+		}else{
+			squares[i].style.display = "none";
+		}
 		
-		squares[i].style.backgroundColor = colors[i];
 		squares[i].addEventListener("click", function(){
 			 
 			 if(this.style.backgroundColor === colorAnswer){
@@ -69,12 +78,17 @@ function setupButtons(){
 
 			modebtn[0].classList.remove("selected");
 			modebtn[1].classList.remove("selected");
+			modebtn[2].classList.remove("selected");
+
 			this.classList.add("selected");
 
 			if(this.textContent === "Easy")
 				numColors = 3;
-			else
+			else if (this.textContent === "Medium")
 				numColors = 6;
+			else
+				numColors = 9;
+
 			reset();
 		});
 	}
@@ -82,7 +96,13 @@ function setupButtons(){
 
 newColor.addEventListener("click", function(){
 	numColors = 6;
+	initializeColorArray();
 	this.textContent = "new color";
+
+	modebtn[0].classList.remove("selected");
+	modebtn[1].classList.add("selected");
+	modebtn[2].classList.remove("selected");
+
 	reset();
 });
 
@@ -93,7 +113,7 @@ function reset(){
 	h1.style.backgroundColor = "steelblue";
 	message.textContent = "";
 	for (var i = 0; i < squares.length; i++){
-		if(colors[i]){
+		if(colors[i] != 0){
 			squares[i].style.backgroundColor = colors[i];
 			squares[i].style.display = "block";
 		}else{
@@ -104,7 +124,7 @@ function reset(){
 }
 
 function initializeColorArray(){
-	for(var i = 0; i < colors.length; i++){
+	for(var i = 0; i < squares.length; i++){
 		colors[i] = 0;
 	}
 }
