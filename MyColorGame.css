@@ -16,7 +16,6 @@
 #container{
 	margin: 20px auto;
 	max-width: 600px;
-	/*padding-top: 15px;*/
 }
 
 #headerDisplay{
@@ -36,7 +35,6 @@ h1{
 	background-color: steelblue;
 	font-weight: normal;
 	text-transform: uppercase;
-	/*line-height: 6.5px;*/
 	padding: 30px;
 }
 
@@ -44,7 +42,6 @@ button{
 	border: none;
 	background: none;
 	margin: 0;
-	/*padding: 0;*/
 	height: 100%;
 	text-transform: uppercase;
 	letter-spacing: 1px;
@@ -64,9 +61,7 @@ button{
 button:hover{
 	color: white;
 	background-color: steelblue;
-	/*border: 0;*/
 }
-
 
 .selected{
 	background-color: steelblue;
@@ -85,5 +80,4 @@ button:hover{
 	text-align: center;
 	margin: 0;
 	height: 30px;
-	/*padding: 0;*/
 }

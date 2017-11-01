@@ -36,16 +36,13 @@ function init(){
 	generateColorArray(numColors);
 	pickAnyRandomColor();
 	setupSquares();
-	//debugger();
 	setupButtons();
 
 	console.log("init(): numColors = " + numColors);
-	
 }
 
 function setupSquares(){
 	for (var i = 0; i < squares.length; i++){
-		//debugger;
 		if (colors[i] != 0){
 			squares[i].style.backgroundColor = colors[i];
 		}else{
@@ -146,9 +143,6 @@ function createColor(){
 }
 
 function generateColorArray(numColors){
-
-	// Reset the colors array
-
 
 	//Initialize the "colors" array
 	for (var i = 0; i < numColors; i++){
