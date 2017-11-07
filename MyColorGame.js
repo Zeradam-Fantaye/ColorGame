@@ -35,7 +35,7 @@ function init(){
 	initializeColorArray();
 	generateColorArray(numColors);
 	pickAnyRandomColor();
-	setupSquares();
+	setupSquares();debugger;
 	setupButtons();
 
 	console.log("init(): numColors = " + numColors);
@@ -68,14 +68,17 @@ function setupSquares(){
 }
 
 function setupButtons(){
+	//Here the for loop is helping to determine the "modebtn" number
+	//It can be done in another way if you do assign an id for each button
+	//And work your way around it
 	for (var i = 0; i < modebtn.length; i++){
 		modebtn[i].addEventListener("click", function(){
 			
 			initializeColorArray();
 
-			modebtn[0].classList.remove("selected");
-			modebtn[1].classList.remove("selected");
-			modebtn[2].classList.remove("selected");
+			modebtn[0].classList.remove("selected");//Easy button
+			modebtn[1].classList.remove("selected");//Medium button
+			modebtn[2].classList.remove("selected");//Hard button
 
 			this.classList.add("selected");
 
